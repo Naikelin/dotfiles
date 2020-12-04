@@ -1,0 +1,126 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+######################################################################
+#
+#  ___           _    _ _      _______ _  _ 
+# |   \ __ ___ _(_)__| ( )___ |_  / __| || |
+# | |) / _` \ V / / _` |/(_-<  / /\__ \ __ |
+# |___/\__,_|\_/|_\__,_| /__/ /___|___/_||_|
+#
+#
+######################################################################
+
+#######################################################
+#
+# Claudio D. Arrieta's custom zsh
+# License: GPLv3
+# See: https://github.com/DavidArrieta/dotfiles
+# for more information
+# ######################################################
+
+#######################################################
+# Sections:
+#
+#	-> General
+#	-> Plugins and themes
+#		-> Zplug-specific
+#	-> Shell utils
+#
+#######################################################
+
+
+###-- General --###
+#
+# Needed by zplug
+source ~/.zplug/init.zsh
+
+###-- Plugins and themes --###
+
+#Let zplug manage itself
+#zplug 'zplug/zplug', \
+	#hook-build:'zplug --self-manage'
+
+# Install a bunch of useful plugins
+
+#
+#
+zplug "modules/git", \
+	defer:1, \
+	from:prezto
+#
+#
+zplug "plugins/git", from:oh-my-zsh ## The gallois theme from OMZ needs this
+#
+#
+zplug "modules/archive", \
+	from:prezto
+#
+#
+zplug "paulirish/git-open", \
+	as:plugin
+#
+#
+# Load a pretty minimalist theme from OMZ
+#zplug "themes/gallois", \
+#	from:oh-my-zsh, \
+#	as:theme
+#
+#
+zplug "djui/alias-tips"
+#
+#
+zplug "rupa/z", \
+	use:z.sh		# Source a file that isn't a .zsh file
+#
+#
+zplug "zsh-users/zsh-syntax-highlighting", \
+	defer:2
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+#
+#
+zplug "zsh-users/zsh-autosuggestions"
+#
+#
+zplug "romkatv/powerlevel10k", \
+	as:theme, \
+	depth:1
+#zplug "zsh-users/zsh-history-substring-search", \
+	#defer:3
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+#
+###-- Zplug-specific --###
+
+# Source plugins and add commands to $PATH
+zplug load
+
+###-- Shell utils --### 
+
+#
+# Source my own aliases (Available in my dotfiles repo)
+source $HOME/.aliases
+#
+#
+# Source my .profile (Available in my dotfiles repo)
+source $HOME/.profile
+#
+#
+# ls automatically after cd
+function chpwd() {
+    emulate -L zsh
+    ls -a
+ }
+
+# Source my own history configuration file (Heavily inspired by Prezto history module)
+. $HOME/dotfiles/zsh/history.zsh
+
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
