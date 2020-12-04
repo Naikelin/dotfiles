@@ -1,0 +1,53 @@
+
+! Base16 Tomorrow Night
+! Author: Chris Kempson (http://chriskempson.com)
+
+! ------------------------------------------------------------------------------
+!                      ROFI Settings
+! ------------------------------------------------------------------------------
+
+! General
+rofi.font:                SF-Pro-Text-Regular 12
+rofi.hide-scrollbar:      true
+
+! Layout
+rofi.width:              100
+rofi.column:             4
+rofi.location:           0
+rofi.lines:              1
+rofi.padding:            400
+rofi.sidebar-mode:       true
+!rofi.fullscreen:         true
+rofi.transparency   real
+
+! Base16 Gruvbox dark, medium
+! Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+
+! base00: #282828
+! base01: #3c3836
+! base02: #504945
+! base03: #665c54
+! base04: #bdae93
+! base05: #d5c4a1
+! base06: #ebdbb2
+! base07: #fbf1c7
+! base08: #fb4934
+! base09: #fe8019
+! base0A: #fabd2f
+! base0B: #b8bb26
+! base0C: #8ec07c
+! base0D: #83a598
+! base0E: #d3869b
+! base0F: #d65d0e
+
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+! Property Name     BG       Border   Separator
+rofi.color-window:  argb:F23c3836, #3c3836, #282828
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  argb:D93c3836, #d5c4a1, #3c3836, #3c3836, #fbf1c7
+rofi.color-active:  argb:D93c3836, #83a598, #3c3836, #3c3836, #83a598
+rofi.color-urgent:  #3c3836, #fb4934, #3c3836, #3c3836, #fb4934
+rofi.theme: /usr/share/rofi/themes/onedark.rasi

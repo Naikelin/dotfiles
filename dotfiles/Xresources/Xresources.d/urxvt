@@ -1,0 +1,102 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! General Look !!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!
+! Disable that ugly scrollbar
+Rxvt.scrollBar:false
+!
+! Blink the cursor 
+Rxvt.cursorBlink:true
+!
+! Alpha channel support (RGBA) for transparent background. See 'man 1 urxvt' for more information
+urxvt*depth: 32
+!
+! Background color
+!URxvt.background:[97]#1d1f21 
+!URxvt*background: rgba:0000/0000/0200/c800
+!
+! Define the font to use. If you want to obtain a complete list of fonts available use "fc-list".
+URxvt.font: xft:Hack:pixelsize=14
+URxvt.boldFont:xft:Hack:style=Bold:pixelsize=14
+!
+! This option specifies the name of the terminal type to be set in the TERM environment variable.
+Rxvt*termName:rxvt-unicode
+!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! Scroll behaviour !!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Do not scroll with output when tty receives output
+URxvt*scrollTtyOutput: false
+!
+! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+!
+! Scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+!
+! Save number lines in the scrollback buffer (default 1000)
+URxvt.saveLines: 4095
+!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! Perl extensions !!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Default extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,selection-to-clipboard,resize-font,vtwheel
+!
+! Highlight urls when urxvt finds one
+URxvt.url-select.underline: true
+!
+! Default browser for opening urls
+URxvt.url-select.launcher: /usr/bin/firefox
+!
+! Press Alt-u to activate url finder. Press o when a url is finded to open it in firefox.
+URxvt.keysym.M-u:           perl:url-select:select_next
+!
+! Alt-Escape to activate keyboard select mode, similar to the termite way. Press y to yank a selected text.
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+!
+! Alt-s to active find mode
+URxvt.keysym.M-s:           perl:keyboard-select:search
+!
+! The default keybindings for the extension resize-font are:
+! Ctrl++ (or Ctrl+Shift+=) to increase size
+! Ctrl+- to decrease size
+! Ctrl+= to reset size
+! Ctrl+? to see current size
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! Miscellaneous !!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.iso14755: false
+!
+URxvt.iso14755_52: false
+!
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+!
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!
+
+! Internal border of number pixels. This resource is limited to 100
+URxvt.internalBorder: 10
+!
+! External border of number pixels. This resource is limited to 100
+URxvt.externalBorder: 0
+!
+! Specifies number of lines (pixel height) to insert between each row of the display [default 0]
+!URxvt.lineSpace: 0
+!
+! Darken (0 .. 99) or lighten (101 .. 200) the transparent background.  A value of 100 means no shading
+!URxvt*shading: 30
+!
+! Idk
+URxvt*boldMode: true
