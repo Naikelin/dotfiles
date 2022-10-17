@@ -1,9 +1,6 @@
 scan_timeout = 60
 add_newline = false
 
-[character]
-success_symbol = "[➜](bold green)"
-
 [line_break]
 disabled = true
 
@@ -15,7 +12,11 @@ format = "[$duration]($style) "
 
 [status]
 disabled = false
-format = "[$status]($style) "
+format = "[$symbol $status]($style) "
+not_found_symbol = ""
+not_executable_symbol = ""
+sigint_symbol = "ﭦ"
+map_symbol = true
 
 [git_branch]
 format = "[$symbol$branch]($style) "

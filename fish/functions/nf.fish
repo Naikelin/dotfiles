@@ -1,3 +1,3 @@
 function nf
- neofetch --kitty /home/naike/Imágenes/Frieren.jpg; 
+    neofetch --ascii /home/nk/.config/neofetch/test
 end
